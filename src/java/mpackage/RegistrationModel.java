@@ -28,7 +28,7 @@ public class RegistrationModel implements ModelInterface {
         try {
             User user;
             String code=UUID.randomUUID().toString();
-            user = new User(request.getParameter("email"), request.getParameter("password"), request.getParameter("firstname"), request.getParameter("lastname"), request.getParameter("phone"), Integer.parseInt(request.getParameter("city")),code);
+            user = new User(request.getParameter("email"), request.getParameter("password"), request.getParameter("firstname"), request.getParameter("lastname"), request.getParameter("phone"),code);
             Dao dao = new Dao();
             
             Connection con= dao.toConnect(context.getInitParameter("url"),context.getInitParameter("username"),context.getInitParameter("password"));

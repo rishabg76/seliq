@@ -17,12 +17,12 @@ import java.sql.Statement;
 public class RegistrationDao {
 
     public boolean toDbQuery(Connection con,User user) throws SQLException {
-        String query = "insert into user_master values('" + user.getFirstname() + "','" + user.getLastname() + "','" + user.getPhone() + "','Gen','" + user.getCity() + "');";
+        String query = "insert into user_master values('" + user.getFirstname() + "','" + user.getLastname() + "','" + user.getPhone() + "','Gen','" + user.getCity() + "','NULL');";
         String query1 = "insert into login_table values('" + user.getEmail() + "','" + user.getPassword() + "','" + user.getStatus() + "','" + user.getPhone() + "');";
         Statement st=con.createStatement();
         boolean b=st.execute(query);
         st.execute(query1);
-        query="insert into mail_code values('"+user.getEmail()+"','"+user.getCode()+"');";
+        query="insert into mail_code values('"+user.getEmail()+"','"+user.getCode()+"','NULL');";
         st.execute(query);
         /*Register obj=new Register();
         obj.register(con, user);*/

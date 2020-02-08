@@ -11,18 +11,22 @@
 }
 */
 
+html p{
+    margin: 0px;
+    padding: 0px;
+}
+
 /*Global*/
 body {
     background-color: brown;
     box-sizing: border-box;
     font-family: "poppins", sans-serif !important;
+    cursor: default;
 }
-main{
-    margin-top: 60px;
-}
+
+
 
 /*Nav*/
-
 
 
 /*News Bulletin*/
@@ -47,13 +51,15 @@ main{
 
 /*Cover section*/
 .cover_section{
+    position: relative;
     height: 400px;
+    margin-top: 60px;
     width: 100%;
 }
 .cover_img{
     width: 100%;
     height: 400px;
-    background :url("../images/cover.jpg");
+    background :url("/Project1/Images/cover.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -89,9 +95,11 @@ main{
 
 }
 .card_container p{
-    /*     font-style: italic;*/
+
+    color: #999999;
     font-weight: 500;
     line-height: 1.3;
+    margin-bottom: 20px;
 }
 .card_container a:hover{
     text-decoration: none;
@@ -122,7 +130,7 @@ main{
 
 
 
-/*Connection Signup*/
+/*Signup*/
 .connection_section{
     display: flex;
     width: 100%;
@@ -152,6 +160,7 @@ main{
     margin: 0px;
     padding: 0px;
 }
+
 .signup_form_subheading{
     color: #663399;
 }
@@ -220,115 +229,37 @@ main{
 }
 .signup_form_container a:hover{ 
     text-decoration: none;
-    color: blue;
+    color: #663399 ;
 }
 
 
-/* Login section*/
-
-.login_section{
-    display: flex;
-    width: 100%;
-    height: auto;
-    padding: 20px ;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.login_form_heading{
-    display: flex;
-    width: 100%;
-    text-transform: uppercase;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.login_form_heading h2{
-    font-weight: bold;
-    margin: 0px;
-    padding: 0px;
-}
-
-.login_form_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-}
-
-.login_form_container .textbox{
-    border: 1px solid #663399;
-    width: 100%;
-    border-radius: 4px;
-    height: 2rem;
-    padding-left: 8px;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-}
-
-.login_form_caption{
-    text-transform:uppercase;
-    width: 100%;
-}
-
-.login_box_row{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.submit_button{
-    display: flex;
-    align-content: center;
-    align-self: center;
-    justify-content: center;
-    width: 100px;
-    height: 35px;
-    border-radius: 6px;
-    margin-top: 20px;
-    background-color: #663399;
-    color: #fff;
-    border: 0px;
-}
-/*
-.submit_button:hover{
-    border: 2px solid #663399; 
-    background-color: transparent;
-    color: #663399;
-}
-
-.form_container p{ 
-    margin-top: 10px;
-}
-.form_container a:hover{ 
-    text-decoration: none;
-    color: blue;
-}
-
-
-*/
 
 
 /*Tab*/
+
+
+.tab_section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    height: 70px;
+}
+
 .tab {
-    padding: 15px;
     display: flex;
     width: 100%;
-    height:70px;
-    background-color: #663399;
+    height: 100%;
+    justify-content: center;
     align-items: center;
-
+    background-color: #663399;
 }
 
 .tab .input {
-    border: 2px solid #663399;
+    border: 8px solid #663399;
     width: 50%;
-    height: 35px;
     padding-left: 7px;
 }
 .tab .categorybox{  
@@ -341,6 +272,7 @@ main{
     padding: 5px;
     height: auto;
 }
+
 
 
 /*Carousal*/
@@ -360,6 +292,7 @@ main{
 /*Categories*/
 .categories{
     display: flex;
+    position: relative;
     height: auto;
     width:100%;
     flex-direction: column;
@@ -382,14 +315,38 @@ main{
 .thumbs{
     display: flex;
     border: 0px;
-    margin: 10px 0px 10px;
+    margin: 10px;
     width:  140px;
-    height: 140px;
+    height: 180px;
     background-color: #fff;
     border-radius: 6px ;
     box-shadow: 0px 0px 10px darkgray; 
+    flex-direction: column;
     overflow: hidden;
+    top:30px;
 }
+
+.thumbs .image_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 100%;
+}
+.thumbs .title_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+}
+
+.thumbs .icon{
+    height: 60%;
+    width: 60%;
+    color: red;
+}
+
 .thumbs:hover{
     transform: scale(1.05);
     box-shadow: 0px 0px 13px #663399; 
@@ -468,6 +425,7 @@ main{
 }
 */
 
+
 /*footer*/
 
 .page_footer{
@@ -479,7 +437,8 @@ main{
     width:100%;
     background-color: black;
     flex-wrap: wrap;
-
+    position: relative;
+    bottom: 0px;
 }
 .wrap_one{
     display: flex;
@@ -534,10 +493,23 @@ main{
 
 @media all and (min-width: 600px) {
 
+    .connection_section{
+        width: 500px;
+    }
+
+    .tab {
+
+        width: 700px;
+
+
+    }    
 }
 
 /*Desktop*/
 @media all and (min-width: 900px) {
+
+
+
 
 
 }

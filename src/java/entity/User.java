@@ -20,13 +20,13 @@ public class User {
     private String gender;
     private String code;
     
-    public User(String email,String password,String firstname,String lastname,String phone,int city,String code){
+    public User(String email,String password,String firstname,String lastname,String phone,String code){
         this.email=email;
         this.password=password;
         this.firstname=firstname;
         this.lastname=lastname;
         this.phone=phone;
-        this.city=city;
+        this.city=1;
         this.status=1;
         this.code=code;
     }

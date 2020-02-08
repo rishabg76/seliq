@@ -25,7 +25,8 @@ public class LoginModel implements ModelInterface{
             
             int status;
             String password=request.getParameter("password");
-            String query="select * from login_table where email='"+email+"'";
+            String query="select * from user_master us inner join login_table l on(us.phone=l.phone) where email='"+email+"'";
+            
             LoginDao ld=new LoginDao();
             ResultSet rs=null;
             rs=ld.toFetch(con, query);
@@ -38,7 +39,12 @@ public class LoginModel implements ModelInterface{
             }else if(status==2){
                 if(password.equals(rs.getString("password"))){
                     HttpSession sess=request.getSession(true);
+                    //sess.setAttribute("firstname",rs.getString("first_name"));
+                    
                     sess.setAttribute("email", email);
+                    sess.setAttribute("first_name", rs.getString("first_name"));
+                    sess.setAttribute("last_name", rs.getString("last_name"));
+                    sess.setAttribute("phone",rs.getString("phone"));
                     request.setAttribute("message","Login Successful!");
                     
                 }else{
@@ -46,7 +52,7 @@ public class LoginModel implements ModelInterface{
                 }
                 
             }
-            request.getRequestDispatcher("/WEB-INF/Messages/LoginMessage.jsp").forward(request, response);    
+            request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);    
         } catch (Exception ex) {
             ex.printStackTrace();
         }
